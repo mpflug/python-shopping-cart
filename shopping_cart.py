@@ -121,7 +121,7 @@ def execute_menu(menuOp, theCart):
 
         item = ItemToPurchase()
 
-        item.item_name = input("Enter the item name:")
+        item.item_name = input("Enter the item name: ")
         item.item_quantity = int(input("Enter the new quantity: "))
 
         theCart.modify_item(item)
