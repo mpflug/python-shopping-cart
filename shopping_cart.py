@@ -146,12 +146,29 @@ if __name__ == "__main__":
     print(f"\nCustomer name: {customer_name}")
     print(f"Today's date: {current_date}")
     print()
-    
+
     # Initialize menu choice
     menu_choice = ""
 
     # Continue until user selects Quit
     while menu_choice != "q":
 
+        # Display menu
         print_menu()
-        print()
+
+        # Ask user to select a menu option
+        menu_choice = input("Choose an option: ").strip().lower()
+
+        # Validate menu choice
+        while menu_choice not in ["a", "r", "c", "o", "q"]:
+            print("Invalid option. Please try again.")
+            menu_choice = input("Choose an option: ").strip().lower()
+
+        # Execute selected option
+        if menu_choice != "q":
+            print()
+            execute_menu(menu_choice, my_cart)
+            print()
+
+    # Exit program
+    print("Thank you for shopping!")
